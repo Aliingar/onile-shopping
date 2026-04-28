@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AK Myanmar Food</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__inner">
+      <div class="topbar">
+        <p class="badge">AK MYANMAR FOOD</p>
+        <nav class="nav-links" id="authNav">
+          <a href="/login.html">ログイン</a>
+          <a href="/register.html">新規登録</a>
+          <button id="logoutBtn" class="nav-button" hidden>ログアウト</button>
+        </nav>
+      </div>
+      <h1>AK Myanmar Food</h1>
+      <p>本格ミャンマー料理を、見やすいカード一覧でゆっくり選べる料理メニューです。</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel menu-panel">
+      <div class="section-head">
+        <div>
+          <h2>料理メニュー</h2>
+          <p class="hint">登録された料理を写真付きで表示しています。</p>
+        </div>
+        <div id="welcomeBox" class="welcome-box"></div>
+      </div>
+      <div id="foodGrid" class="food-grid"></div>
+      <p id="emptyMessage" class="empty">まだ料理が登録されていません。管理者画面から料理を追加してください。</p>
+    </section>
+  </main>
+
+  <script src="frontend.js"></script>
+</body>
+</html>

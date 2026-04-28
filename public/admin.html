@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>管理者ダッシュボード | AK Myanmar Food</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__inner">
+      <div class="topbar">
+        <p class="badge">ADMIN DASHBOARD</p>
+        <nav class="nav-links">
+          <a href="/admin.html" class="nav-pill nav-pill--active">料理管理</a>
+          <a href="/admin-users.html" class="nav-pill">管理者管理</a>
+          <button id="adminLogoutBtn" class="nav-button nav-button--light">ログアウト</button>
+        </nav>
+      </div>
+      <h1>管理者ダッシュボード</h1>
+      <p>料理を追加し、登録済みの料理を確認・削除できます。</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>料理を追加</h2>
+      <p class="hint">料理名、値段、説明、料理写真を登録すると一般ユーザー画面に反映されます。</p>
+      <form id="foodForm" class="stack-form" enctype="multipart/form-data">
+        <div class="form-grid">
+          <label>
+            料理名
+            <input id="nameInput" name="name" type="text" required />
+          </label>
+          <label>
+            値段
+            <input id="priceInput" name="price" type="number" min="0" required />
+          </label>
+        </div>
+        <label>
+          説明
+          <textarea id="descriptionInput" name="description" rows="4" placeholder="料理の特徴やおすすめポイント"></textarea>
+        </label>
+        <label>
+          料理写真アップロード
+          <input id="imageInput" name="image" type="file" accept="image/*" />
+        </label>
+        <div id="previewBox" class="preview-box" hidden>
+          <p>画像プレビュー</p>
+          <img id="previewImage" alt="選択した料理画像のプレビュー" />
+        </div>
+        <div class="actions">
+          <button id="submitFoodBtn" type="submit" class="btn btn--primary">料理を登録</button>
+          <button id="cancelEditBtn" type="button" class="btn btn--ghost" hidden>編集をやめる</button>
+        </div>
+      </form>
+      <p id="formMessage" class="status"></p>
+    </section>
+
+    <section class="panel catalog-section">
+      <div class="section-head">
+        <div>
+          <h2>登録済み料理</h2>
+          <p class="hint">一覧から内容を確認し、不要な料理は削除できます。</p>
+        </div>
+      </div>
+      <div id="adminFoodGrid" class="food-grid"></div>
+      <p id="adminEmptyMessage" class="empty">まだ料理が登録されていません。</p>
+    </section>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>

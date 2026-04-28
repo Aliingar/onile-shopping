@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>管理者ログイン | AK Myanmar Food</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero hero--compact">
+    <div class="hero__inner">
+      <p class="badge">ADMIN LOGIN</p>
+      <h1>管理者ログイン</h1>
+      <p>卒業研究デモ用の管理者アカウントで料理を登録できます。</p>
+    </div>
+  </header>
+
+  <main class="container container--narrow">
+    <section class="panel auth-panel">
+      <h2>管理者ログイン</h2>
+      <form id="adminLoginForm" class="stack-form">
+        <label>
+          管理者ID
+          <input id="usernameInput" name="username" type="text" value="admin" required />
+        </label>
+        <label>
+          パスワード
+          <input id="passwordInput" name="password" type="password" value="admin123" required />
+        </label>
+        <button type="submit" class="btn btn--primary">管理者としてログイン</button>
+      </form>
+      <p id="messageBox" class="status"></p>
+    </section>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>

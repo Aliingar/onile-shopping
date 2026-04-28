@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bcrypt": "latest",
+    "express": "latest",
+    "express-session": "latest",
+    "multer": "latest",
+    "sqlite3": "latest"
+  }
+}

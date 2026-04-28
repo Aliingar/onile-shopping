@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>管理者管理 | AK Myanmar Food</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__inner">
+      <div class="topbar">
+        <p class="badge">ADMIN USERS</p>
+        <nav class="nav-links">
+          <a href="/admin.html" class="nav-pill">料理管理</a>
+          <a href="/admin-users.html" class="nav-pill nav-pill--active">管理者管理</a>
+          <button id="adminLogoutBtn" class="nav-button nav-button--light">ログアウト</button>
+        </nav>
+      </div>
+      <h1>管理者管理</h1>
+      <p>管理者アカウントを追加・一覧表示・削除できます（自分自身は削除できません）。</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>管理者を追加</h2>
+      <p class="hint">新しい管理者IDとパスワードを登録します。</p>
+      <form id="adminCreateForm" class="stack-form">
+        <div class="form-grid">
+          <label>
+            管理者ID
+            <input name="username" type="text" required />
+          </label>
+          <label>
+            パスワード
+            <input name="password" type="password" required />
+          </label>
+        </div>
+        <div class="actions">
+          <button type="submit" class="btn btn--primary">管理者を追加</button>
+        </div>
+      </form>
+      <p id="adminUserMessage" class="status"></p>
+    </section>
+
+    <section class="panel catalog-section">
+      <h2>管理者一覧</h2>
+      <p class="hint">自分以外の管理者は削除できます。</p>
+      <div id="adminList" class="admin-list"></div>
+      <p id="adminListEmpty" class="empty">管理者が見つかりません。</p>
+    </section>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>
+

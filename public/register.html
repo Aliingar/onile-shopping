@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>新規登録 | AK Myanmar Food</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero hero--compact">
+    <div class="hero__inner">
+      <p class="badge">USER REGISTER</p>
+      <h1>新規登録</h1>
+      <p>ユーザー登録をすると、ログインしてサイトを利用できます。</p>
+    </div>
+  </header>
+
+  <main class="container container--narrow">
+    <section class="panel auth-panel">
+      <h2>登録フォーム</h2>
+      <form id="registerForm" class="stack-form">
+        <label>
+          ユーザーID
+          <input id="usernameInput" name="username" type="text" required />
+        </label>
+        <label>
+          パスワード
+          <input id="passwordInput" name="password" type="password" required />
+        </label>
+        <button type="submit" class="btn btn--primary">登録する</button>
+      </form>
+      <p id="messageBox" class="status"></p>
+      <p class="auth-links">登録済みの方は <a href="/login.html">ログイン</a></p>
+    </section>
+  </main>
+
+  <script src="frontend.js"></script>
+</body>
+</html>
