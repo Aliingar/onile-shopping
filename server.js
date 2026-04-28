@@ -14,6 +14,7 @@ const SESSION_SECRET = process.env.SESSION_SECRET || "dev-session-secret-change-
 const ROOT_DIR = __dirname;
 const PUBLIC_DIR = path.join(ROOT_DIR, "public");
 const UPLOADS_DIR = path.join(ROOT_DIR, "uploads");
+const ICON_DIR = path.join(ROOT_DIR, "icon");
 const DB_PATH = path.join(ROOT_DIR, "database.sqlite");
 
 if (!fs.existsSync(UPLOADS_DIR)) {
@@ -171,6 +172,7 @@ app.use(
 );
 
 app.use("/uploads", express.static(UPLOADS_DIR));
+app.use("/icon", express.static(ICON_DIR));
 
 app.get("/admin.html", (req, res) => {
   if (!req.session.adminId) {
