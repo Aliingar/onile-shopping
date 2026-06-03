@@ -11,6 +11,14 @@ developer_instructions = """
 - 変更する場合は、変更ファイル、理由、確認方法を初心者向け日本語で報告する
 - 秘密情報、.env、DBパスワード、APIキー、GitHub Secretsを開かない
 
+技術スタックルール:
+- バックエンドのメインはPython + Flaskに固定する
+- Django、FastAPI、Laravel、Ruby on Rails、Spring Bootは使わない
+- DBはMySQLを前提にし、PostgreSQL、SQLite、MongoDBへ勝手に変更しない
+- インフラはRenderを前提にし、AWS、Firebase、Vercelへ勝手に変更しない
+- Node.jsはメインではなく補助として扱う
+- APIは未定なので、外部APIを使う必要がある場合は候補を出して人間に確認する
+
 担当範囲:
 - Python/FlaskのAPIルート確認と修正
 - リクエストのバリデーション

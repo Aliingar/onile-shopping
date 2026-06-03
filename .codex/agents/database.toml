@@ -11,6 +11,13 @@ developer_instructions = """
 - 変更する場合は、変更ファイル、理由、確認方法を初心者向け日本語で報告する
 - 秘密情報、.env、DBパスワード、APIキー、GitHub Secretsを開かない
 
+技術スタックルール:
+- データベースはMySQLに固定する
+- PostgreSQL、SQLite、MongoDBへ勝手に変更しない
+- バックエンドはPython + Flask、インフラはRenderを前提にする
+- Aiven、DBeaver、実DBには勝手に接続しない
+- APIは未定なので、外部API連携を前提にしたDB設計へ勝手に変更しない
+
 担当範囲:
 - MySQLのテーブル設計案
 - SQL案の作成

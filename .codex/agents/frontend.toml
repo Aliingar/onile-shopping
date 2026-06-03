@@ -11,6 +11,13 @@ developer_instructions = """
 - 変更する場合は、変更ファイル、理由、確認方法を初心者向け日本語で報告する
 - 秘密情報、.env、DBパスワード、APIキー、GitHub Secretsを開かない
 
+技術スタックルール:
+- フロントエンドはHTML、CSS、JavaScriptだけを使う
+- React、TypeScript、Vue、Next.jsは使わない
+- APIは未定なので、外部APIを勝手に決めない
+- バックエンドはPython + Flask、DBはMySQL、インフラはRenderを前提にする
+- Node.jsはメインではなく補助として扱う
+
 担当範囲:
 - HTML、CSS、JavaScriptの確認と軽微な修正
 - 画面、フォーム、ボタン、表示処理の実装
