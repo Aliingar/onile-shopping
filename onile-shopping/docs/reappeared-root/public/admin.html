@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-page-title="adminDashboard">管理者ダッシュボード | AK Myanmar Food</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Noto+Sans+Myanmar:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__inner">
+      <div class="topbar">
+        <div class="brand-wrap">
+          <img src="/icon/logo1.jpg" alt="AK Myanmar Food logo" class="brand-logo" />
+          <p class="badge" data-i18n="admin.badgeDashboard">ADMIN DASHBOARD</p>
+        </div>
+        <div class="topbar__actions">
+          <div class="lang-switch" aria-label="language switcher">
+            <button type="button" class="lang-switch__btn" data-lang="ja">JP</button>
+            <button type="button" class="lang-switch__btn" data-lang="my">MY</button>
+            <button type="button" class="lang-switch__btn" data-lang="en">EN</button>
+          </div>
+          <nav class="nav-links">
+            <a href="/admin.html" class="nav-pill nav-pill--active" data-i18n="admin.navFood">料理管理</a>
+            <a href="/admin-users.html" class="nav-pill" data-i18n="admin.navUsers">管理者管理</a>
+            <button id="adminLogoutBtn" class="nav-button nav-button--light" data-i18n="admin.navLogout">ログアウト</button>
+          </nav>
+        </div>
+      </div>
+      <h1 data-i18n="admin.dashboardTitle">管理者ダッシュボード</h1>
+      <p data-i18n="admin.dashboardLead">料理の追加・編集・削除を行い、一般ユーザー画面にすぐ反映できます。</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2 data-i18n="admin.addFoodTitle">料理を追加</h2>
+      <p class="hint" data-i18n="admin.addFoodHint">料理名、値段、説明、料理写真を登録すると一般ユーザー画面に反映されます。</p>
+      <form id="foodForm" class="stack-form" enctype="multipart/form-data">
+        <div class="form-grid">
+          <label>
+            <span data-i18n="admin.foodNameLabel">料理名</span>
+            <input id="nameInput" name="name" type="text" required data-i18n-placeholder="admin.foodNamePlaceholder" placeholder="料理名を入力" />
+          </label>
+          <label>
+            <span data-i18n="admin.foodPriceLabel">値段</span>
+            <input id="priceInput" name="price" type="number" min="0" required data-i18n-placeholder="admin.foodPricePlaceholder" placeholder="値段を入力" />
+          </label>
+        </div>
+        <label>
+          <span data-i18n="admin.foodDescriptionLabel">説明</span>
+          <textarea id="descriptionInput" name="description" rows="4" data-i18n-placeholder="admin.foodDescriptionPlaceholder" placeholder="料理の特徴やおすすめポイント"></textarea>
+        </label>
+        <label>
+          <span data-i18n="admin.foodImageLabel">料理写真アップロード</span>
+          <input id="imageInput" name="image" type="file" accept="image/*" />
+        </label>
+        <div id="previewBox" class="preview-box" hidden>
+          <p data-i18n="admin.previewLabel">画像プレビュー</p>
+          <img id="previewImage" alt="food preview" />
+        </div>
+        <div class="actions">
+          <button id="submitFoodBtn" type="submit" class="btn btn--primary" data-i18n="admin.createFoodButton">料理を登録</button>
+          <button id="cancelEditBtn" type="button" class="btn btn--ghost" hidden data-i18n="admin.cancelEditButton">編集をやめる</button>
+        </div>
+      </form>
+      <p id="formMessage" class="status"></p>
+    </section>
+
+    <section class="panel catalog-section">
+      <div class="section-head">
+        <div>
+          <h2 data-i18n="admin.registeredFoodsTitle">登録済み料理</h2>
+          <p class="hint" data-i18n="admin.registeredFoodsHint">一覧から内容を確認し、不要な料理は削除できます。</p>
+        </div>
+      </div>
+      <div id="adminFoodGrid" class="food-grid"></div>
+      <p id="adminEmptyMessage" class="empty" data-i18n="admin.noFoods">まだ料理が登録されていません。</p>
+    </section>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>
