@@ -10,6 +10,33 @@ Codexやサブエージェントが作業するときは、このファイルの
 - ローカル想定: `G:\マイドライブ\Backup\School PC backup file\kozin\onile-shopping`
 - このプロジェクトは個人制作なので、初心者にも分かる日本語で説明してください。
 
+## 技術スタック固定ルール
+
+このプロジェクトで使う技術は、次に固定します。
+
+- フロントエンド: HTML、CSS、JavaScript
+- バックエンド: Python
+- フレームワーク: Flask
+- サブ: Node.js
+- データベース: MySQL
+- インフラ: Render
+- API: 未定
+- ツール: Visual Studio Code（VS Code）、GitHub
+
+使わない技術:
+
+- React、TypeScript、Vue、Next.js などは使わない
+- Django、FastAPI、Laravel、Ruby on Rails、Spring Boot などは使わない
+- PostgreSQL、SQLite、MongoDB ではなく、MySQLを前提にする
+- AWS、Firebase、Vercel ではなく、Renderを前提にする
+
+バックエンドのメインは Python + Flask です。
+Node.js はメインではなく、補助的に使うものとして扱ってください。
+APIはまだ未定なので、外部APIを勝手に決めないでください。
+必要な場合は候補を出し、決定は人間に確認してください。
+技術を変更した方がよさそうに見えても、勝手に変更せず「変更案」として説明してください。
+コードを書く場合は、どのファイルに書くか、何のためのコードか、テスト方法も説明してください。
+
 ## GitとPRのルール
 
 - `main` ブランチで直接作業しないでください。

@@ -26,6 +26,36 @@ Aliingar/onile-shopping
 https://github.com/Aliingar/onile-shopping
 ```
 
+## 技術スタック固定ルール
+
+このプロジェクトでは、使う技術を固定します。
+別の技術の方が便利に見えても、勝手に変更しません。
+
+| 分類 | 使う技術 |
+| --- | --- |
+| フロントエンド | HTML、CSS、JavaScript |
+| バックエンド | Python |
+| フレームワーク | Flask |
+| サブ | Node.js |
+| データベース | MySQL |
+| インフラ | Render |
+| API | 未定 |
+| ツール | Visual Studio Code（VS Code）、GitHub |
+
+使わない技術も決めています。
+
+- React、TypeScript、Vue、Next.js などは使いません。
+- Django、FastAPI、Laravel、Ruby on Rails、Spring Boot などは使いません。
+- PostgreSQL、SQLite、MongoDB ではなく、MySQLを使います。
+- AWS、Firebase、Vercel ではなく、Renderを使う前提です。
+
+バックエンドのメインは Python + Flask です。
+Node.js はメインではなく、補助的に使います。
+APIはまだ未定なので、外部APIを勝手に決めません。
+必要な場合は候補を出し、人間が決めてから使います。
+
+コードを書く場合は、どのファイルに書くか、何のためのコードか、どうテストするかも説明します。
+
 ## ブランチ運用
 
 作業するときは、`main` ブランチを直接変更しません。

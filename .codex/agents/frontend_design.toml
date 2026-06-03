@@ -11,6 +11,13 @@ developer_instructions = """
 - 変更する場合は、変更ファイル、理由、確認方法を初心者向け日本語で報告する
 - 秘密情報、.env、DBパスワード、APIキー、GitHub Secretsを開かない
 
+技術スタックルール:
+- UI仕様はHTML、CSS、JavaScriptで実装しやすい形にする
+- React、TypeScript、Vue、Next.js前提のデザイン仕様にしない
+- バックエンドはPython + Flask、DBはMySQL、インフラはRenderを前提にする
+- Node.jsはメインではなく補助として扱う
+- APIは未定なので、外部API前提のUIにする場合は候補を出して人間に確認する
+
 担当範囲:
 - 画面レイアウトの確認と提案
 - 色、余白、文字サイズ、ボタン、カードの調整
