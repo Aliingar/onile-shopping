@@ -1,0 +1,323 @@
+:root {
+  --main-green: #0f3d2e;
+  --sub-green: #145a42;
+  --deep-green: #08281d;
+  --gold: #d4a017;
+  --bg: #f5f8f4;
+  --card: #ffffff;
+  --text: #10231c;
+  --muted: #66756d;
+  --line: #dce8df;
+  --shadow: 0 18px 40px rgba(15, 61, 46, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Zen Kaku Gothic New", "Noto Sans Myanmar", system-ui, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 6%;
+  background: var(--main-green);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  text-decoration: none;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+}
+
+.brand-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold);
+  background: white;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.language-select,
+.nav-link,
+.btn,
+.nav-button,
+.card-button {
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 10px 14px;
+  font-weight: 700;
+  font: inherit;
+}
+
+.language-select {
+  background: white;
+  color: var(--main-green);
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.nav-link--gold {
+  background: var(--gold);
+  color: #1d1600;
+  border-color: var(--gold);
+}
+
+.hero {
+  background:
+    linear-gradient(135deg, rgba(15, 61, 46, 0.95), rgba(8, 40, 29, 0.95)),
+    url("/icon/logo1.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 72px 6%;
+}
+
+.hero__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 6vw, 76px);
+  margin: 0 0 16px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  max-width: 760px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 32px auto;
+  padding: 0 20px;
+}
+
+.panel,
+.menu-panel,
+.catalog-section,
+.auth-panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+
+.hint {
+  color: var(--muted);
+  margin: 10px 0 0;
+  line-height: 1.7;
+}
+
+.welcome-box {
+  margin-top: 16px;
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
+  font-weight: 800;
+}
+
+.catalog,
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 22px;
+  margin-top: 22px;
+}
+
+.food-card,
+.product-card {
+  overflow: hidden;
+  border-radius: 22px;
+  background: white;
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 28px rgba(15, 61, 46, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.food-card:hover,
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(15, 61, 46, 0.2);
+}
+
+.food-card img,
+.product-card img,
+.food-card__image {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+}
+
+.food-card__body,
+.product-card__body {
+  padding: 18px;
+}
+
+.food-card h3,
+.product-card h3,
+.food-card__title {
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+}
+
+.food-card__price,
+.price {
+  color: var(--sub-green);
+  font-size: 1.25rem;
+  font-weight: 900;
+  margin: 0 0 10px;
+}
+
+.food-card__price::before,
+.price::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.food-card__description {
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.btn--primary,
+button[type="submit"] {
+  background: var(--main-green);
+  color: white;
+  border: none;
+}
+
+.btn--primary:hover,
+button[type="submit"]:hover {
+  background: var(--sub-green);
+}
+
+.empty {
+  margin: 16px 0 0;
+  color: var(--muted);
+}
+
+/* Forms (admin/login pages reuse existing markup) */
+.container--narrow {
+  max-width: 720px;
+}
+
+.stack-form {
+  display: grid;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  font-weight: 700;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="file"],
+textarea {
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  padding: 12px 14px;
+  font: inherit;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.card-button--danger {
+  background: #fff;
+  border: 1px solid #f0c8c8;
+  color: #b34545;
+}
+
+.card-button--neutral {
+  background: #fff;
+  border: 1px solid var(--line);
+  color: var(--sub-green);
+}
+
+@media (max-width: 760px) {
+  .site-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .header-actions {
+    width: 100%;
+  }
+
+  .language-select,
+  .nav-link {
+    flex: 1;
+    text-align: center;
+  }
+
+  .hero {
+    padding: 50px 20px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}

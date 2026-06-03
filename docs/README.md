@@ -1,4 +1,4 @@
-# AK Myanmar Food (Express + SQLite)
+# AK Myanmar Food (Flask + SQLite)
 
 卒業研究デモ用の料理メニューサイトです。一般ユーザーは料理一覧を閲覧でき、管理者はログイン後に料理の追加・編集・削除、管理者の追加・削除ができます。
 
@@ -8,8 +8,10 @@
 
 ```bash
 cd "onile-shopping/backend"
-npm install
-npm start
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+python app.py
 ```
 
 ブラウザで開く:
@@ -21,13 +23,13 @@ npm start
 
 リポジトリ直下は次の3フォルダに整理しています。
 
-- `backend/`: Express サーバー、API、認証、アップロード処理、Node.js依存関係
+- `backend/`: Flask サーバー、API、認証、アップロード処理、Python依存関係
 - `database/`: SQLite DBファイル、DB設計メモ、スキーマ説明
 - `docs/`: フロントエンド、説明書、設計資料、旧プロトタイプ、作業資料
 
 ## DB作成方法
 
-`npm start` で `database/database.sqlite` が自動作成・自動初期化されます。
+`python app.py` で `database/database.sqlite` が自動作成・自動初期化されます。
 
 作成されるテーブル:
 - `admins`
@@ -47,13 +49,13 @@ npm start
 
 ## 公開準備 (Render向け)
 
-このアプリは `process.env.PORT` と `process.env.SESSION_SECRET` に対応しています。
+このアプリは `PORT` と `SESSION_SECRET` に対応しています。
 
 1. GitHub にこのフォルダをpushする
 2. Render で **New +** → **Web Service** → 対象リポジトリを選択
 3. 設定:
-   - Build Command: `npm install`
-   - Start Command: `npm start`
+   - Build Command: `pip install -r backend/requirements.txt`
+   - Start Command: `cd backend && gunicorn app:app`
 4. 環境変数を追加:
    - `SESSION_SECRET`: 例) ランダムな長い文字列
 5. デプロイ後、Renderが発行するURLにアクセスする
