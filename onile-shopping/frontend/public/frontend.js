@@ -68,7 +68,7 @@ async function renderFoods() {
     foods.forEach((food) => grid.appendChild(createFoodCard(food)));
 
     emptyMessage.hidden = foods.length > 0;
-    emptyMessage.textContent = foods.length > 0 ? "" : (typeof t === "function" ? t("foodMenuText") : "");
+    emptyMessage.textContent = foods.length > 0 ? "" : (typeof t === "function" ? t("emptyFood") : "");
   } catch (error) {
     emptyMessage.hidden = false;
     emptyMessage.textContent = error.message;
