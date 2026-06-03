@@ -12,7 +12,7 @@ const PORT = Number.parseInt(process.env.PORT || "3000", 10);
 const SESSION_SECRET = process.env.SESSION_SECRET || "dev-session-secret-change-me";
 
 const ROOT_DIR = path.resolve(__dirname, "..");
-const PUBLIC_DIR = path.join(ROOT_DIR, "docs", "frontend", "public");
+const PUBLIC_DIR = path.join(ROOT_DIR, "frontend", "public");
 const UPLOADS_DIR = path.join(ROOT_DIR, "backend", "uploads");
 const ICON_DIR = path.join(PUBLIC_DIR, "icon");
 const DB_PATH = path.join(ROOT_DIR, "database", "database.sqlite");
