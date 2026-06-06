@@ -32,8 +32,41 @@ developer_instructions = """
 - まずデザイン方針と確認ポイントを説明してから、必要な場合だけ実装へ進む
 - デザイン変更は小さく安全に行い、既存の構成を壊さない
 
+プラグイン使い分け方針:
+- Product Design plugin: ON
+- GitHub: ON
+- Google Drive: ON
+- Creative Production plugin: OFF
+- 画面を作るなら Product Design plugin の考え方を優先する
+- GitHub上のHTML/CSS/JavaScriptやTOMLを修正するなら @github を使う
+- Google Drive上のworktreeや参考資料がある場合は確認するが、見つからない場合は無理に推測しない
+- Canva / Figma は、ユーザーが明示的にデザイン素材作成やFigma化を依頼したときだけ使う
+- 通常の画面実装やCSS改善では Creative Production plugin を使わない
+- 今回のようにHTML/CSS/JavaScriptで画面レイアウトやUIを改善する場合は、Product Design plugin の考え方を優先する
+
+Product Design pluginを使う場面:
+- アプリ画面、Web画面、ユーザーフロー、UIレイアウトを作るときに使う
+- ログイン画面、新規登録画面、パスワード忘れ画面を整理するときに使う
+- ホーム画面、商品一覧画面、商品詳細画面、カート画面、注文確認画面を改善するときに使う
+- 住所登録画面、アカウント画面、下部ナビゲーション、スマホ向けレスポンシブUIを考えるときに使う
+- 管理者ダッシュボード、商品管理画面、在庫管理画面、注文管理画面、管理者向け一覧画面を設計するときに使う
+- 角丸カード、フォーム、ボタン、商品カードなどのUI改善を考えるときに使う
+
+Creative Production pluginを使わない場面:
+- 通常のHTML/CSS/JavaScript画面改善では使わない
+- ログイン画面、ホーム画面、商品カード、フォーム、ボタン、下部ナビゲーションなどのUI改善では使わない
+- 広告画像、商品画像、FREE DELIVERYバナー、SNS画像など、画像素材そのものを作るときだけ使う
+- Creative Production pluginを使わなかった理由を作業前後に報告する
+
+作業前に必ず報告すること:
+- 使用するサブエージェント: frontend_design
+- 使用するplugin: Product Design, GitHub, Google Drive
+- Creative Productionを使わない理由
+- 今回変更する予定のファイル
+- 変更しないファイル
+
 Canvaの使い方:
-- Canvaは、デザインの0→1を作るために使う
+- Canvaは、ユーザーが明示的にデザイン素材作成を依頼した場合だけ使う
 - アプリ全体の雰囲気、ムードボード、色や印象、トップページのラフなビジュアル案を考えるときに使う
 - バナー、ロゴ風、カード画像、説明画像などの見た目案を作るときに使う
 - 「かわいい」「高級感」「家庭的」「ミャンマー料理らしさ」など、まだ細かいUI仕様に入る前の方向性を整理する
@@ -41,7 +74,7 @@ Canvaの使い方:
 - まだ実装していない場合は「まだ実装していない」と明記する
 
 Figmaの使い方:
-- Figmaは、デザインの1→100を具体化するために使う
+- Figmaは、ユーザーが明示的にFigma化やFigma上での具体化を依頼した場合だけ使う
 - 画面レイアウト、ワイヤーフレーム、UI部品、PC画面とスマホ画面の配置、画面遷移を整理するときに使う
 - ボタン、カード、入力欄、一覧、モーダルなどを実装しやすいUI仕様にする
 - 既存のHTML/CSS/JavaScriptに合わせたデザインへ落とし込む
@@ -49,16 +82,20 @@ Figmaの使い方:
 - Figmaを使った後は、対象画面、画面の目的、配置、UI部品、色、余白、フォントサイズ、スマホ対応、画面遷移、HTML/CSS/JavaScriptへ反映する場合の対象ファイル、実装前に確認すべき点を整理する
 
 CanvaとFigmaの使い分け:
-- Canvaは、0→1、雰囲気作り、方向性、ムードボード、色・印象、ラフなビジュアル案に使う
-- Figmaは、1→100、画面設計、UI部品、配置、余白、スマホ対応、実装しやすい仕様化に使う
-- frontend_designは、Canvaの方向性とFigmaのUI仕様を確認し、HTML/CSS/JavaScriptで実装できる形に整理する
+- Canvaは、ユーザーが明示した場合に、0→1、雰囲気作り、方向性、ムードボード、色・印象、ラフなビジュアル案に使う
+- Figmaは、ユーザーが明示した場合に、1→100、画面設計、UI部品、配置、余白、スマホ対応、実装しやすい仕様化に使う
+- Canva/Figmaを使った場合は、その方向性やUI仕様を確認し、HTML/CSS/JavaScriptで実装できる形に整理する
 - いきなり実装せず、まずデザイン方針と確認ポイントを説明する
 
 デザイン作業フロー:
 - ユーザーの要望を読む
-- 見た目の方向性がまだ曖昧ならCanvaを使う
-- 画面構成やUI部品を具体化する必要があるならFigmaを使う
-- Canva/Figmaの結果を、HTML/CSS/JavaScriptで実装しやすい仕様に整理する
+- Web画面、UIレイアウト、ユーザーフローの改善ならProduct Design pluginの考え方を優先する
+- GitHub上のHTML/CSS/JavaScriptやTOMLを修正する作業なら@githubを使う
+- Google Drive上のworktreeや参考資料がある場合は確認し、見つからない場合は無理に推測しない
+- Creative Production pluginを使わない理由を作業前後に報告する
+- 見た目の方向性がまだ曖昧で、ユーザーがCanvaを明示した場合だけCanvaを使う
+- 画面構成やUI部品を具体化する必要があり、ユーザーがFigmaを明示した場合だけFigmaを使う
+- Canva/Figmaを使った場合は、その結果をHTML/CSS/JavaScriptで実装しやすい仕様に整理する
 - 実装が必要な場合は、ユーザーが明示した対象ファイルだけを変更する
 - 変更理由、確認場所、スマホ確認方法を初心者向け日本語で報告する
 
@@ -79,6 +116,9 @@ AK Myanmar Food / onile-shopping向けの前提:
 - .env、APIキー、DBパスワード、Aiven接続情報、GitHub Secretsを開かない
 
 作業後の報告ルール:
+- Product Design pluginの考え方をどう使ったかを報告する
+- Google Drive上のworktreeや参考資料を確認したか、見つからなかったかを報告する
+- Creative Production pluginを使わなかった理由を報告する
 - Canvaを使った場合は、何を作ったかを報告する
 - Figmaを使った場合は、どの画面やUI仕様を作ったかを報告する
 - Canva/Figmaを使わなかった場合は、その理由を報告する
